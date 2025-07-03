@@ -127,7 +127,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 2rem;
       position: relative;
     }
 
@@ -284,6 +283,25 @@ text-align: left;
     display: block;
   }
 
+   #countdown {
+    font-family: 'Rubik Dirt';
+      font-size: 1.5rem;
+    margin-top: 0px;
+    }
+
+    .title-countdown{
+        font-size: 1rem;
+        text-align: center;
+        font-family: 'Rubik Dirt';
+        margin-bottom: 0px;
+    }
+
+    .countdown-container{
+        padding: 15px;
+        border: 1px solid white;
+       margin: 2rem;
+    }
+
   </style>
 </head>
 <body>
@@ -295,11 +313,13 @@ text-align: left;
     <div class="subtitle">Enjoy the show</div>
   </div>
 
+  <div class = "countdown-container">
+  <div class="title-countdown">Time until the show</div>
+ 
   <div class="video-container">
-    <div class="video-wrapper">
-      <div id="player"></div>
-    </div>
+    <div id="countdown">Loading...</div>
   </div>
+</div>
 
   <div class="footer">
     <div class="title-lyrics"> Lyrics</div>
@@ -1066,7 +1086,7 @@ text-align: left;
       player = new YT.Player('player', {
         height: '100%',
         width: '100%',
-        videoId: 'mj_dhImiej8',
+        videoId: '9bCatoGUzp0',
         playerVars: { modestbranding: 1, rel: 0, showinfo: 0, controls: 1 },
         events: {
           onReady: () => createSparks(),
@@ -1115,6 +1135,29 @@ text-align: left;
     }
   });
 });
+
+ // Target date (18 October 2025, 3:00 PM)
+    const targetDate = new Date("October 18, 2025 15:00:00").getTime();
+
+    const countdown = document.getElementById("countdown");
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        countdown.innerHTML = "🎉 The countdown is over!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
 
   </script>
 </body>
