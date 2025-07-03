@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jayden's 21st 🎉</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+  <style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Creepster&family=Nosifer&family=Butcherman&display=swap');
+    
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Metal Mania', cursive;
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.4) 0%, transparent 50%),
+        linear-gradient(135deg, #000, #1a0000, #330000);
+      animation: hellfire 16s ease-in-out infinite alternate;
+      z-index: -2;
+    }
+
+    @keyframes hellfire {
+      0%, 100% { filter: brightness(1) contrast(1.2); }
+      50% { filter: brightness(1.3) contrast(1.5); }
+    }
+
+    .rubik-dirt-regular {
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+    .sparks {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .spark {
+      position: absolute;
+      width: 3px;
+      height: 15px;
+      background: linear-gradient(to bottom, #ff0000, #cc0000, transparent);
+      border-radius: 50%;
+      animation: sparkFall 3s infinite linear;
+    }
+
+    @keyframes sparkFall {
+      0% { transform: translateY(-100vh); opacity: 0; }
+      10%, 90% { opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    .header { text-align: center; padding: 2rem; position: relative; z-index: 10; }
+    .title {
+      font-family: 'Rubik Dirt', cursive;
+      font-size: clamp(2.0rem, 8vw, 5rem);
+      color: #bc1823;
+      background: linear-gradient(45deg, #bc1823, #bc1823);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: dirtFlow 3s ease-in-out infinite;
+      text-shadow: 0 0 10px #bc1823;
+      letter-spacing: 3px;
+    }
+
+      .title-lyrics {
+        margin-bottom: 25px;
+      font-family: 'Rubik Dirt', cursive;
+      font-size: clamp(2.0rem, 8vw, 5rem);
+      color: #bc1823;
+      background: linear-gradient(45deg, #bc1823, #bc1823);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: dirtFlow 3s ease-in-out infinite;
+      text-shadow: 0 0 10px #bc1823;
+      letter-spacing: 3px;
+    }
+
+    @keyframes dirtFlow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      font-family: 'Rubik Dirt';
+      color: #ff4444;
+      text-shadow: 0 0 10px rgba(255, 68, 68, 0.8);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .video-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      padding-top: 50.625%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 50px rgba(255, 0, 0, 0.6);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 15px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .control-btn {
+      background: rgba(139, 0, 0, 0.4);
+      border: 2px solid rgba(255, 0, 0, 0.4);
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .play-btn {
+      width: 75px;
+      height: 75px;
+      font-size: 1.8rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 1.1rem;
+      color: #cc4444;
+    }
+
+    .emoji {
+      font-size: 1.3em;
+      animation: headbang 1s infinite;
+      color: #ff0000;
+    }
+
+    @keyframes headbang {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .faq-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Rubik Dirt', cursive;
+  color: #ff4444;
+  margin-bottom: 1.5rem;
+}
+
+.faq-item {
+  padding-bottom: 1rem;
+  border: 1px solid #ff4444;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.2rem;
+   font-family: 'Rubik Dirt';
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-question::after {
+  position: absolute;
+  right: 1rem;
+  font-size: 1.5rem;
+}
+
+.faq-question.active::after {
+}
+
+.faq-answer {
+font-family: 'Rubik Dirt';
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.faq-answer p {
+font-family: 'Rubik Dirt';
+font-family: '';
+padding: 1rem 0;
+margin: 0;
+}
+
+.Lyrics{
+font-family: 'Rubik Dirt';
+text-align: left;
+}
+
+ .faq-item {
+    margin-bottom: 1rem;
+  }
+
+  .faq-question {
+
+    padding: 1rem;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 1rem;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+   #countdown {
+    font-family: 'Rubik Dirt';
+      font-size: 1.rem;
+    margin-top: 0px;
+    }
+
+    .title-countdown{
+        font-size: 1rem;
+        text-align: center;
+        font-family: 'Rubik Dirt';
+        margin-bottom: 0px;
+    }
+
+    .countdown-container{
+        padding: 15px;
+        border: 1px solid white;
+       margin: 2rem;
+    }
+
+    .logo {
+         font-family: 'Rubik Dirt';
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Hamburger Button */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Hamburger Animation */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Drawer */
+        .drawer {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 350px;
+            height: 100%;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+
+        .drawer.active {
+            right: 0;
+        }
+
+        /* Drawer Header */
+        .drawer-header {
+             font-family: 'Rubik Dirt';
+            background: black;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .drawer-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+
+        .drawer-title {
+             font-family: 'Rubik Dirt';
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .drawer-subtitle {
+             font-family: 'Rubik Dirt';
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* Menu Items */
+        .menu-items {
+            padding: 2rem 0;
+        }
+
+        .menu-item {
+             font-family: 'Rubik Dirt';
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .menu-item:hover::before {
+            left: 100%;
+        }
+
+        
+
+        .menu-item i {
+            margin-right: 1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        header#Top-nav {
+    display: flex
+;
+}
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+
+          @media (max-width: 768px) {
+            .drawer {
+                width: 100vw;
+                right: -100vw;
+            }
+
+            .header {
+                padding: 1rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .menu-item {
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .menu-item:nth-child(1) { animation-delay: 0.1s; }
+        .menu-item:nth-child(2) { animation-delay: 0.2s; }
+        .menu-item:nth-child(3) { animation-delay: 0.3s; }
+        .menu-item:nth-child(4) { animation-delay: 0.4s; }
+        .menu-item:nth-child(5) { animation-delay: 0.5s; }
+        .menu-item:nth-child(6) { animation-delay: 0.6s; }
+    
+         .banner-section {
+      background: url('HomePage Banner.jpeg') center/cover no-repeat;
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="sparks" id="sparks"></div>
+ <header class="header" id ="Top-nav">
+       <div class="title">JAYDEN'S 21ST</div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Drawer -->
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <button class="close-btn" id="closeBtn">&times;</button>
+           <div class="title">JAYDEN'S 21ST</div>
+        </div>
+        <nav class="menu-items">
+            <a href="#" class="menu-item">
+                Home
+            </a>
+            <a href="#" class="menu-item">
+                Profile
+            </a>
+            <a href="#" class="menu-item">
+                Settings
+            </a>
+            <a href="#" class="menu-item">
+                Contact
+            </a>
+            <a href="#" class="menu-item">
+                About
+            </a>
+            <a href="#" class="menu-item">
+               Services
+            </a>
+        </nav>
+    </div>
+  <div class="header">
+    
+    <div class="banner-section">
+  </div>
+
+  <div class="subtitle">Welcome Matthew,</div>
+    <div class="subtitle">Enjoy the show</div>
+  </div>
+
+    <div class = "countdown-container">
+  <div class="title-countdown">Time until the show</div>
+ 
+  <div class="video-container">
+    <div id="countdown">Loading...</div>
+  </div>
+</div>
+
+  
+
+  <div class="footer">
+    <div class="title-lyrics"> Lyrics</div>
+ <div class="faq-item">
+  <button class="faq-question">Boulevard of Broken Dreams – Green Day</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      I walk a lonely road<br>
+      The only one that I have ever known<br>
+      Don't know where it goes<br>
+      But it's home to me, and I walk alone<br><br>
+
+      I walk this empty street<br>
+      On the Boulevard of Broken Dreams<br>
+      Where the city sleeps<br>
+      And I'm the only one, and I walk alone<br><br>
+
+      I walk alone, I walk alone<br>
+      I walk alone, I walk a-<br><br>
+
+      My shadow's the only one that walks beside me<br>
+      My shallow heart's the only thing that's beating<br>
+      Sometimes, I wish someone out there will find me<br>
+      'Til then, I walk alone<br><br>
+
+      Ah-ah, ah-ah, ah-ah, ah-ah<br>
+      Ah-ah, ah-ah, ah-ah<br><br>
+
+      I'm walking down the line<br>
+      That divides me somewhere in my mind<br>
+      On the borderline<br>
+      Of the edge, and where I walk alone<br><br>
+
+      Read between the lines<br>
+      What's fucked up, and everything's alright<br>
+      Check my vital signs<br>
+      To know I'm still alive, and I walk alone<br><br>
+
+      I walk alone, I walk alone<br>
+      I walk alone, I walk a-<br><br>
+
+      My shadow's the only one that walks beside me<br>
+      My shallow heart's the only thing that's beating<br>
+      Sometimes, I wish someone out there will find me<br>
+      'Til then, I walk alone<br><br>
+
+      Ah-ah, ah-ah, ah-ah, ah-ah<br>
+      Ah-ah, ah-ah, I walk alone, I walk a-<br><br>
+
+      I walk this empty street<br>
+      On the Boulevard of Broken Dreams<br>
+      Where the city sleeps<br>
+      And I'm the only one, and I walk a-<br><br>
+
+      My shadow's the only one that walks beside me<br>
+      My shallow heart's the only thing that's beating<br>
+      Sometimes, I wish someone out there will find me<br>
+      'Til then, I walk alone
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Smells Like Teen Spirit – Nirvana</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      Load up on guns, bring your friends<br>
+      It's fun to lose and to pretend<br>
+      She's over-bored and self-assured<br>
+      Oh no, I know a dirty word<br><br>
+
+      Hello, hello, hello, how low?<br>
+      Hello, hello, hello, how low?<br>
+      Hello, hello, hello, how low?<br>
+      Hello, hello, hello<br><br>
+
+      With the lights out, it's less dangerous<br>
+      Here we are now, entertain us<br>
+      I feel stupid and contagious<br>
+      Here we are now, entertain us<br>
+      A mulatto, an albino<br>
+      A mosquito, my libido, yeah<br>
+      Hey, yay<br><br>
+
+      I'm worse at what I do best<br>
+      And for this gift, I feel blessed<br>
+      Our little group has always been<br>
+      And always will until the end<br><br>
+
+      Hello, hello, hello, how low?<br>
+      Hello, hello, hello, how low?<br>
+      Hello, hello, hello, how low?<br>
+      Hello, hello, hello<br><br>
+
+      With the lights out, it's less dangerous<br>
+      Here we are now, entertain us<br>
+      I feel stupid and contagious<br>
+      Here we are now, entertain us<br>
+      A mulatto, an albino<br>
+      A mosquito, my libido, yeah<br>
+      Hey, yay<br><br>
+
+      And I forget just why I taste<br>
+      Oh yeah, I guess it makes me smile<br>
+      I found it hard, it's hard to find<br>
+      Oh well, whatever, never mind<br><br>
+
+      Hello, hello, hello, how low?<br>
+      Hello, hello, hello, how low?<br>
+      Hello, hello, hello, how low?<br>
+      Hello, hello, hello<br><br>
+
+      With the lights out, it's less dangerous<br>
+      Here we are now, entertain us<br>
+      I feel stupid and contagious<br>
+      Here we are now, entertain us<br>
+      A mulatto, an albino<br>
+      A mosquito, my libido<br><br>
+
+      A denial, a denial<br>
+      A denial, a denial<br>
+      A denial, a denial<br>
+      A denial, a denial<br>
+      A denial
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Come As You Are – Nirvana</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      Come as you are, as you were<br>
+      As I want you to be<br>
+      As a friend, as a friend<br>
+      As an old enemy<br><br>
+
+      Take your time, hurry up<br>
+      The choice is yours, don't be late<br>
+      Take a rest, as a friend<br>
+      As an old memory, yeah<br>
+      Memory, yeah<br>
+      Memory, yeah<br>
+      Memory, yeah<br><br>
+
+      Come as you are, as you were<br>
+      As I want you to be<br>
+      As a friend, as a friend<br>
+      As an old enemy<br><br>
+
+      Take your time, hurry up<br>
+      The choice is yours, don't be late<br>
+      Take a rest, as a friend<br>
+      As an old memory, yeah<br>
+      Memory, yeah<br>
+      Memory, yeah<br>
+      Memory, yeah<br><br>
+
+      And I swear that I don't have a gun<br>
+      No, I don't have a gun<br>
+      No, I don't have a gun<br><br>
+
+      Memory, yeah<br>
+      Memory, yeah<br>
+      Memory, yeah<br>
+      Memory, yeah<br><br>
+
+      And I swear that I don't have a gun<br>
+      No, I don't have a gun<br>
+      No, I don't have a gun<br>
+      No, I don't have a gun<br>
+      No, I don't have a gun<br>
+      No, I don't have a gun
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Use Somebody – Kings of Leon</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      I've been roaming around<br>
+      Always looking down at all I see<br>
+      Painted faces, fill the places I can't reach<br><br>
+
+      You know that I could use somebody<br>
+      You know that I could use somebody<br><br>
+
+      Someone like you, and all you know, and how you speak<br>
+      Countless lovers under cover of the street<br><br>
+
+      You know that I could use somebody<br>
+      You know that I could use somebody<br>
+      Someone like you<br><br>
+
+      Off in the night, while you live it up, I'm off to sleep<br>
+      Waging wars to shape the poet and the beat<br>
+      I hope it's gonna make you notice<br>
+      I hope it's gonna make you notice<br><br>
+
+      Someone like me<br>
+      Someone like me<br>
+      Someone like me, somebody<br><br>
+
+      I'm ready now<br>
+      I'm ready now<br>
+      I'm ready now<br>
+      I'm ready now<br>
+      I'm ready now<br>
+      I'm ready now<br>
+      I'm ready now<br><br>
+
+      Someone like you, somebody<br>
+      Someone like you, somebody<br>
+      Someone like you, somebody<br><br>
+
+      I've been roaming around<br>
+      Always looking down at all I see
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Seven Nation Army – The White Stripes</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      I'm gonna fight 'em off<br>
+      A seven nation army couldn't hold me back<br>
+      They're gonna rip it off<br>
+      Takin' their time right behind my back<br>
+      And I'm talkin' to myself at night<br>
+      Because I can't forget<br>
+      Back and forth through my mind<br>
+      Behind a cigarette<br><br>
+
+      And the message comin' from my eyes<br>
+      Says, "Leave it alone"<br>
+      Don't wanna hear about it<br>
+      Every single one's got a story to tell<br>
+      Everyone knows about it<br>
+      From the Queen of England to the Hounds of Hell<br><br>
+
+      And if I catch it comin' back my way<br>
+      I'm gonna serve it to you<br>
+      And that ain't what you want to hear<br>
+      But that's what I'll do<br>
+      And the feelin' comin' from my bones<br>
+      Says, "Find a home"<br><br>
+
+      I'm goin' to Wichita<br>
+      Far from this opera forevermore<br>
+      I'm gonna work the straw<br>
+      Make the sweat drip out of every pore<br>
+      And I'm bleedin', and I'm bleedin', and I'm bleedin'<br>
+      Right before the Lord<br><br>
+
+      All the words are gonna bleed from me<br>
+      And I will think no more<br>
+      And the stains comin' from my blood<br>
+      Tell me, "Go back home"
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Toxicity – System of a Down</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      Conversion, software version 7.0<br>
+      Looking at life through the eyes of a tire hub<br>
+      Eating seeds as a pastime activity<br>
+      The toxicity of our city, of our city<br><br>
+
+      You, what do you own the world?<br>
+      How do you own disorder? Disorder<br>
+      Now somewhere between the sacred silence<br>
+      Sacred silence and sleep<br>
+      Somewhere between the sacred silence and sleep<br>
+      Disorder, disorder, disorder<br><br>
+
+      More wood for their fires, loud neighbors<br>
+      Flashlight reveries caught in the headlights of a truck<br>
+      Eating seeds as a pastime activity<br>
+      The toxicity of our city, of our city<br><br>
+
+      You, what do you own the world?<br>
+      How do you own disorder? Disorder<br>
+      Now somewhere between the sacred silence<br>
+      Sacred silence and sleep<br>
+      Somewhere between the sacred silence and sleep<br>
+      Disorder, disorder, disorder<br><br>
+
+      You, what do you own the world?<br>
+      How do you own disorder?<br>
+      Now somewhere between the sacred silence<br>
+      Sacred silence and sleep<br>
+      Somewhere between the sacred silence and sleep<br>
+      Disorder, disorder, disorder<br><br>
+
+      When I became the sun<br>
+      I shone life into the man's hearts<br>
+      When I became the sun<br>
+      I shone life into the man's hearts
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Purple Rain – Prince</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      I never meant to cause you any sorrow<br>
+      I never meant to cause you any pain<br>
+      I only wanted one time to see you laughing<br>
+      I only want to see you laughing in the purple rain<br><br>
+
+      Purple rain, purple rain<br>
+      Purple rain, purple rain<br>
+      Purple rain, purple rain<br><br>
+
+      I only want to see you bathing in the purple rain<br><br>
+
+      I never wanted to be your weekend lover<br>
+      I only wanted to be some kind of friend<br>
+      Baby, I could never steal you from another<br>
+      It's such a shame our friendship had to end<br><br>
+
+      Purple rain, purple rain<br>
+      Purple rain, purple rain<br>
+      Purple rain, purple rain<br><br>
+
+      I only want to see you underneath the purple rain<br><br>
+
+      Honey I know, I know, I know times are changing<br>
+      It's time we all reach out for something new<br>
+      That means you too<br>
+      You say you want a leader<br>
+      But you can't seem to make up your mind<br>
+      I think you better close it<br>
+      And let me guide you to the purple rain<br><br>
+
+      Purple rain, purple rain<br>
+      Purple rain, purple rain<br><br>
+
+      If you know what I'm singing about up here<br>
+      C'mon, raise your hand<br><br>
+
+      Purple rain, purple rain<br><br>
+
+      I only want to see you, only want to see you<br>
+      In the purple rain
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Mr. Brightside – The Killers</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      Coming out of my cage and I've been doing just fine<br>
+      Gotta, gotta be down, because I want it all<br>
+      It started out with a kiss, how did it end up like this?<br>
+      It was only a kiss, it was only a kiss<br><br>
+
+      Now I'm falling asleep and she's calling a cab<br>
+      While he's having a smoke and she's taking a drag<br>
+      Now they're going to bed and my stomach is sick<br>
+      And it's all in my head, but she's touching his<br><br>
+
+      Chest now, he takes off her<br>
+      Dress now, let me go<br>
+      And I just can't look, it's killing me<br>
+      They're taking control<br><br>
+
+      Jealousy, turning saints into the sea<br>
+      Swimming through sick lullabies, choking on your alibis<br>
+      But it's just the price I pay, destiny is calling me<br>
+      Open up my eager eyes, 'cause I'm Mr. Brightside<br><br>
+
+      I'm coming out of my cage and I've been doing just fine<br>
+      Gotta, gotta be down, because I want it all<br>
+      It started out with a kiss, how did it end up like this?<br>
+      It was only a kiss, it was only a kiss<br><br>
+
+      Now I'm falling asleep and she's calling a cab<br>
+      While he's having a smoke and she's taking a drag<br>
+      Now they're going to bed and my stomach is sick<br>
+      And it's all in my head, but she's touching his<br><br>
+
+      Chest now, he takes off her<br>
+      Dress now, let me go<br>
+      'Cause I just can't look, it's killing me<br>
+      They're taking control<br><br>
+
+      Jealousy, turning saints into the sea<br>
+      Swimming through sick lullabies, choking on your alibis<br>
+      But it's just the price I pay, destiny is calling me<br>
+      Open up my eager eyes, 'cause I'm Mr. Brightside<br><br>
+
+      I never...<br>
+      I never...<br>
+      I never...<br>
+      I never...
+    </p>
+  </div>
+</div><div class="faq-item">
+  <button class="faq-question">Take Me Out – Franz Ferdinand</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      So if you're lonely<br>
+      You know I'm here waiting for you<br>
+      I'm just a cross-hair<br>
+      I'm just a shot away from you<br>
+      And if you leave here<br>
+      You leave me broken, shattered I lie<br>
+      I'm just a cross-hair<br>
+      I'm just a shot, then we can die<br>
+      Ah-ah-ah<br><br>
+
+      I know I won't be leaving here<br>
+      With you<br>
+      I say, "Don't you know?"<br>
+      You say, "You don't know"<br>
+      I say<br>
+      "Take me out"<br>
+      I say, "You don't show"<br>
+      Don't move, time is slow<br>
+      I say<br>
+      "Take me out"<br>
+      I say, "You don't know"<br>
+      You say, "You don't know"<br>
+      I say<br>
+      "Take me out"<br><br>
+
+      If I move, this could die<br>
+      If eyes move, this could die<br>
+      I want you<br>
+      To take me out<br>
+      I know, I won't be leaving here (with you)<br>
+      Oh, I know I won't be leaving here<br>
+      I know, I won't be leaving here (with you)<br>
+      I know, I won't be leaving here<br>
+      With you<br><br>
+
+      I say, "Don't you know?"<br>
+      You say, "You don't know"<br>
+      I say<br>
+      "Take me out"<br>
+      If I wane, this could die<br>
+      If I wait, this could die<br>
+      I want you<br>
+      To take me out<br>
+      If I move, this could die<br>
+      Eyes move, this can die<br>
+      Come on<br>
+      Take me out<br>
+      I know, I won't be leaving here (with you)<br>
+      Oh, I know I won't be leaving here<br>
+      I know, I won't be leaving here (with you)<br>
+      I know, I won't be leaving here<br>
+      With you
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Fast Car – Tracy Chapman</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      You got a fast car<br>
+      I want a ticket to anywhere<br>
+      Maybe we make a deal<br>
+      Maybe together we can get somewhere<br>
+      Any place is better<br>
+      Starting from zero got nothing to lose<br>
+      Maybe we'll make something<br>
+      Me, myself, I got nothing to prove<br><br>
+
+      You got a fast car<br>
+      I got a plan to get us outta here<br>
+      I been working at the convenience store<br>
+      Managed to save just a little bit of money<br>
+      Won't have to drive too far<br>
+      Just 'cross the border and into the city<br>
+      You and I can both get jobs<br>
+      And finally see what it means to be living<br><br>
+
+      See, my old man's got a problem<br>
+      He live with the bottle, that's the way it is<br>
+      He says his body's too old for working<br>
+      His body's too young to look like his<br><br>
+
+      My mama went off and left him<br>
+      She wanted more from life than he could give<br>
+      I said somebody's got to take care of him<br>
+      So I quit school and that's what I did<br><br>
+
+      You got a fast car<br>
+      Is it fast enough so we can fly away?<br>
+      We gotta make a decision<br>
+      Leave tonight or live and die this way<br><br>
+
+      So I remember when we were driving, driving in your car<br>
+      Speed so fast it felt like I was drunk<br>
+      City lights lay out before us<br>
+      And your arm felt nice wrapped 'round my shoulder<br>
+      And I-I had a feeling that I belonged<br>
+      I-I had a feeling I could be someone, be someone, be someone<br><br>
+
+      You got a fast car<br>
+      We go cruising, entertain ourselves<br>
+      You still ain't got a job<br>
+      And I work in the market as a checkout girl<br>
+      I know things will get better<br>
+      You'll find work and I'll get promoted<br>
+      We'll move out of the shelter<br>
+      Buy a bigger house and live in the suburbs<br><br>
+
+      So I remember when we were driving, driving in your car<br>
+      Speed so fast it felt like I was drunk<br>
+      City lights lay out before us<br>
+      And your arm felt nice wrapped 'round my shoulder<br>
+      And I-I had a feeling that I belonged<br>
+      I-I had a feeling I could be someone, be someone, be someone<br><br>
+
+      You got a fast car<br>
+      I got a job that pays all our bills<br>
+      You stay out drinking late at the bar<br>
+      See more of your friends than you do of your kids<br>
+      I'd always hoped for better<br>
+      Thought maybe together you and me'd find it<br><br>
+
+      I got no plans, I ain't going nowhere<br>
+      Take your fast car and keep on driving<br><br>
+
+      So I remember when we were driving, driving in your car<br>
+      Speed so fast it felt like I was drunk<br>
+      City lights lay out before us<br>
+      And your arm felt nice wrapped 'round my shoulder<br>
+      And I-I had a feeling that I belonged<br>
+      I-I had a feeling I could be someone, be someone, be someone<br><br>
+
+      You got a fast car<br>
+      Is it fast enough so you can fly away?<br>
+      You gotta make a decision<br>
+      Leave tonight or live and die this way
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Tennessee Whiskey</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      Used to spend my nights out in a barroom<br>
+      Liquor was the only love I'd known<br>
+      But you rescued me from reachin' for the bottom<br>
+      And brought me back from being too far gone<br><br>
+
+      You're as smooth as Tennessee whiskey<br>
+      You're as sweet as strawberry wine<br>
+      You're as warm as a glass of brandy<br>
+      And honey, I stay stoned on your love all the time<br><br>
+
+      I've looked for love in all the same old places<br>
+      Found the bottom of a bottle's always dry<br>
+      But when you poured out your heart, I didn't waste it<br>
+      'Cause there's nothing like your love to get me high<br><br>
+
+      You're as smooth as Tennessee whiskey<br>
+      You're as sweet as strawberry wine<br>
+      You're as warm as a glass of brandy<br>
+      And honey, I stay stoned on your love all the time<br><br>
+
+      You're as smooth as Tennessee whiskey<br>
+      You're as sweet as strawberry wine<br>
+      You're as warm as a glass of brandy<br>
+      And honey, I stay stoned on your love all the time<br><br>
+
+      You're as smooth as Tennessee whiskey<br>
+      Tennessee whiskey<br>
+      Tennessee whiskey<br>
+      You're as smooth as Tennessee whiskey<br>
+      Tennessee whiskey<br>
+      Tennessee whiskey
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Creep – Radiohead</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      When you were here before<br>
+      Couldn't look you in the eye<br>
+      You're just like an angel<br>
+      Your skin makes me cry<br>
+      You float like a feather<br>
+      In a beautiful world<br>
+      I wish I was special<br>
+      You're so fucking special<br><br>
+
+      But I'm a creep<br>
+      I'm a weirdo<br>
+      What the hell am I doing here?<br>
+      I don't belong here<br><br>
+
+      I don't care if it hurts<br>
+      I want to have control<br>
+      I want a perfect body<br>
+      I want a perfect soul<br>
+      I want you to notice<br>
+      When I'm not around<br>
+      You're so fucking special<br>
+      I wish I was special<br><br>
+
+      But I'm a creep<br>
+      I'm a weirdo<br>
+      What the hell am I doing here?<br>
+      I don't belong here<br><br>
+
+      Oh, oh<br><br>
+
+      She's running out again<br>
+      She's running out<br>
+      She run, run, run, run<br>
+      Run<br><br>
+
+      Whatever makes you happy<br>
+      Whatever you want<br>
+      You're so fucking special<br>
+      I wish I was special<br><br>
+
+      But I'm a creep<br>
+      I'm a weirdo<br>
+      What the hell am I doing here?<br>
+      I don't belong here<br>
+      I don't belong here
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Iris – Goo Goo Dolls</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      And I'd give up forever to touch you<br>
+      'Cause I know that you feel me somehow<br>
+      You're the closest to Heaven that I'll ever be<br>
+      And I don't wanna go home right now<br><br>
+
+      And all I can taste is this moment<br>
+      And all I can breathe is your life<br>
+      And sooner or later, it's over<br>
+      I just don't wanna miss you tonight<br><br>
+
+      And I don't want the world to see me<br>
+      'Cause I don't think that they'd understand<br>
+      When everything's made to be broken<br>
+      I just want you to know who I am<br><br>
+
+      And you can't fight the tears that ain't coming<br>
+      Or the moment of truth in your lies<br>
+      When everything feels like the movies<br>
+      Yeah, you bleed just to know you're alive<br><br>
+
+      And I don't want the world to see me<br>
+      'Cause I don't think that they'd understand<br>
+      When everything's made to be broken<br>
+      I just want you to know who I am<br><br>
+
+      And I don't want the world to see me<br>
+      'Cause I don't think that they'd understand<br>
+      When everything's made to be broken<br>
+      I just want you to know who I am<br><br>
+
+      And I don't want the world to see me<br>
+      'Cause I don't think that they'd understand<br>
+      When everything's made to be broken<br>
+      I just want you to know who I am<br><br>
+
+      I just want you to know who I am<br>
+      I just want you to know who I am<br>
+      I just want you to know who I am<br>
+      I just want you to know who I am
+    </p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Hallelujah – Leonard Cohen</button>
+  <div class="faq-answer">
+    <p class="Lyrics">
+      Now I've heard there was a secret chord<br>
+      That David played, and it pleased the Lord<br>
+      But you don't really care for music, do you?<br>
+      It goes like this, the fourth, the fifth<br>
+      The minor falls, the major lifts<br>
+      The baffled king composing Hallelujah<br>
+      Hallelujah, Hallelujah<br>
+      Hallelujah, Hallelujah<br><br>
+
+      Your faith was strong but you needed proof<br>
+      You saw her bathing on the roof<br>
+      Her beauty and the moonlight overthrew you<br>
+      She tied you to a kitchen chair<br>
+      She broke your throne, and she cut your hair<br>
+      And from your lips she drew the Hallelujah<br>
+      Hallelujah, Hallelujah<br>
+      Hallelujah, Hallelujah<br><br>
+
+      You say I took the name in vain<br>
+      I don't even know the name<br>
+      But if I did, well, really, what's it to you?<br>
+      There's a blaze of light in every word<br>
+      It doesn't matter which you heard<br>
+      The holy or the broken Hallelujah<br>
+      Hallelujah, Hallelujah<br>
+      Hallelujah, Hallelujah
+    </p>
+  </div>
+</div>
+  <!-- Add more songs here -->
+</div>
+  </div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+
+ const questions = document.querySelectorAll(".faq-question");
+
+  questions.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.parentElement;
+
+      // Close all other items
+      document.querySelectorAll(".faq-item").forEach((el) => {
+        if (el !== item) {
+          el.classList.remove("active");
+        }
+      });
+
+      // Toggle current item
+      item.classList.toggle("active");
+    });
+  });
+
+    let player;
+
+    function createSparks() {
+      const sparksContainer = document.getElementById('sparks');
+      sparksContainer.innerHTML = '';
+      for (let i = 0; i < 15; i++) {
+        const spark = document.createElement('div');
+        spark.className = 'spark';
+        spark.style.left = Math.random() * 100 + '%';
+        spark.style.animationDelay = Math.random() * 3 + 's';
+        spark.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        sparksContainer.appendChild(spark);
+      }
+    }
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '100%',
+        width: '100%',
+        videoId: '9bCatoGUzp0',
+        playerVars: { modestbranding: 1, rel: 0, showinfo: 0, controls: 1 },
+        events: {
+          onReady: () => createSparks(),
+          onStateChange: (e) => {
+            if (e.data === YT.PlayerState.PLAYING) {
+              document.body.classList.add('flash');
+              setTimeout(() => document.body.classList.remove('flash'), 300);
+            }
+          }
+        }
+      });
+    }
+
+    function togglePlay() {
+      if (!player) return;
+      const state = player.getPlayerState();
+      if (state === YT.PlayerState.PLAYING) {
+        player.pauseVideo();
+      } else {
+        player.playVideo();
+        document.body.classList.add('flash');
+        setTimeout(() => document.body.classList.remove('flash'), 300);
+      }
+    }
+
+    function rewind() {
+      if (player) {
+        player.seekTo(Math.max(0, player.getCurrentTime() - 10));
+      }
+    }
+
+    function forward() {
+      if (player) {
+        player.seekTo(Math.min(player.getDuration(), player.getCurrentTime() + 10));
+      }
+    }
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const answer = button.nextElementSibling;
+    const isOpen = button.classList.toggle('active');
+    if (isOpen) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    } else {
+      answer.style.maxHeight = null;
+    }
+  });
+});
+
+ // Target date (18 October 2025, 3:00 PM)
+    const targetDate = new Date("October 18, 2025 15:00:00").getTime();
+
+    const countdown = document.getElementById("countdown");
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        countdown.innerHTML = "🎉 The countdown is over!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+
+  </script>
+  <script>
+        // Get elements
+        const hamburger = document.getElementById('hamburger');
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('closeBtn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        // Toggle drawer function
+        function toggleDrawer() {
+            hamburger.classList.toggle('active');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = drawer.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        // Close drawer function
+        function closeDrawer() {
+            hamburger.classList.remove('active');
+            drawer.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event listeners
+        hamburger.addEventListener('click', toggleDrawer);
+        closeBtn.addEventListener('click', closeDrawer);
+        overlay.addEventListener('click', closeDrawer);
+
+        // Close drawer when clicking menu items
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeDrawer();
+                // You can add navigation logic here
+                console.log('Navigating to:', item.textContent.trim());
+            });
+        });
+
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && drawer.classList.contains('active')) {
+                closeDrawer();
+            }
+        });
+
+        // Prevent body scroll when drawer is open
+        drawer.addEventListener('touchmove', (e) => {
+            e.stopPropagation();
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && drawer.classList.contains('active')) {
+                closeDrawer();
+            }
+        });
+    </script>
+</body>
+</html>
