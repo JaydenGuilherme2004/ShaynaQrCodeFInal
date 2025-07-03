@@ -285,7 +285,7 @@ text-align: left;
 
    #countdown {
     font-family: 'Rubik Dirt';
-      font-size: 1.5rem;
+      font-size: 1.rem;
     margin-top: 0px;
     }
 
@@ -302,24 +302,281 @@ text-align: left;
        margin: 2rem;
     }
 
+    .logo {
+         font-family: 'Rubik Dirt';
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Hamburger Button */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Hamburger Animation */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Drawer */
+        .drawer {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 350px;
+            height: 100%;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+
+        .drawer.active {
+            right: 0;
+        }
+
+        /* Drawer Header */
+        .drawer-header {
+             font-family: 'Rubik Dirt';
+            background: black;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .drawer-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+
+        .drawer-title {
+             font-family: 'Rubik Dirt';
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .drawer-subtitle {
+             font-family: 'Rubik Dirt';
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* Menu Items */
+        .menu-items {
+            padding: 2rem 0;
+        }
+
+        .menu-item {
+             font-family: 'Rubik Dirt';
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .menu-item:hover::before {
+            left: 100%;
+        }
+
+        
+
+        .menu-item i {
+            margin-right: 1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+
+          @media (max-width: 768px) {
+            .drawer {
+                width: 100vw;
+                right: -100vw;
+            }
+
+            .header {
+                padding: 1rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .menu-item {
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .menu-item:nth-child(1) { animation-delay: 0.1s; }
+        .menu-item:nth-child(2) { animation-delay: 0.2s; }
+        .menu-item:nth-child(3) { animation-delay: 0.3s; }
+        .menu-item:nth-child(4) { animation-delay: 0.4s; }
+        .menu-item:nth-child(5) { animation-delay: 0.5s; }
+        .menu-item:nth-child(6) { animation-delay: 0.6s; }
   </style>
 </head>
 <body>
   <div class="sparks" id="sparks"></div>
+ <header class="header">
+       <div class="title">JAYDEN'S 21ST</div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
 
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Drawer -->
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <button class="close-btn" id="closeBtn">&times;</button>
+           <div class="title">JAYDEN'S 21ST</div>
+        </div>
+        <nav class="menu-items">
+            <a href="#" class="menu-item">
+                Home
+            </a>
+            <a href="#" class="menu-item">
+                Profile
+            </a>
+            <a href="#" class="menu-item">
+                Settings
+            </a>
+            <a href="#" class="menu-item">
+                Contact
+            </a>
+            <a href="#" class="menu-item">
+                About
+            </a>
+            <a href="#" class="menu-item">
+               Services
+            </a>
+        </nav>
+    </div>
   <div class="header">
-    <div class="title">JAYDEN'S 21ST</div>
-    <div class="subtitle">Welcome Shayna,</div>
-    <div class="subtitle">Enjoy the show</div>
-  </div>
+    
 
-  <div class = "countdown-container">
+    <div class = "countdown-container">
   <div class="title-countdown">Time until the show</div>
  
   <div class="video-container">
     <div id="countdown">Loading...</div>
   </div>
 </div>
+
+    
+    <div class="subtitle">Welcome Matthew,</div>
+    <div class="subtitle">Enjoy the show</div>
+  </div>
+
+  
 
   <div class="footer">
     <div class="title-lyrics"> Lyrics</div>
@@ -1160,5 +1417,63 @@ text-align: left;
     }, 1000);
 
   </script>
+  <script>
+        // Get elements
+        const hamburger = document.getElementById('hamburger');
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('closeBtn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        // Toggle drawer function
+        function toggleDrawer() {
+            hamburger.classList.toggle('active');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = drawer.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        // Close drawer function
+        function closeDrawer() {
+            hamburger.classList.remove('active');
+            drawer.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event listeners
+        hamburger.addEventListener('click', toggleDrawer);
+        closeBtn.addEventListener('click', closeDrawer);
+        overlay.addEventListener('click', closeDrawer);
+
+        // Close drawer when clicking menu items
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeDrawer();
+                // You can add navigation logic here
+                console.log('Navigating to:', item.textContent.trim());
+            });
+        });
+
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && drawer.classList.contains('active')) {
+                closeDrawer();
+            }
+        });
+
+        // Prevent body scroll when drawer is open
+        drawer.addEventListener('touchmove', (e) => {
+            e.stopPropagation();
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && drawer.classList.contains('active')) {
+                closeDrawer();
+            }
+        });
+    </script>
 </body>
 </html>
