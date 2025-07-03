@@ -453,6 +453,11 @@ text-align: left;
             text-align: center;
         }
 
+        header#Top-nav {
+    display: flex
+;
+}
+
         /* Close Button */
         .close-btn {
             position: absolute;
@@ -517,11 +522,18 @@ text-align: left;
         .menu-item:nth-child(4) { animation-delay: 0.4s; }
         .menu-item:nth-child(5) { animation-delay: 0.5s; }
         .menu-item:nth-child(6) { animation-delay: 0.6s; }
+    
+         .banner-section {
+      background: url('HomePage Banner.jpeg') center/cover no-repeat;
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <div class="sparks" id="sparks"></div>
- <header class="header">
+ <header class="header" id ="Top-nav">
        <div class="title">JAYDEN'S 21ST</div>
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -562,6 +574,12 @@ text-align: left;
     </div>
   <div class="header">
     
+    <div class="banner-section">
+  </div>
+
+  <div class="subtitle">Welcome Matthew,</div>
+    <div class="subtitle">Enjoy the show</div>
+  </div>
 
     <div class = "countdown-container">
   <div class="title-countdown">Time until the show</div>
@@ -570,11 +588,6 @@ text-align: left;
     <div id="countdown">Loading...</div>
   </div>
 </div>
-
-    
-    <div class="subtitle">Welcome Matthew,</div>
-    <div class="subtitle">Enjoy the show</div>
-  </div>
 
   
 
